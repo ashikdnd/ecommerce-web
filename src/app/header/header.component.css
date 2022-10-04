@@ -1,8 +1,13 @@
 .header.header-height {
-  height: 60px;
+  height: 56px;
 }
 
 .header .container {
   width: 980px;
-  height: 60px;
+  height: 56px;
+}
+
+.header-holder {
+  background: url(../../assets/images/header-bg.png);
+  width: 100%;
 }

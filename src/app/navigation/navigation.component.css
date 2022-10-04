@@ -1,0 +1,12 @@
+.navigation.navigation-height {
+  height: 56px;
+}
+
+.navigation .container {
+  width: 980px;
+  height: 56px;
+}
+
+.navigation-item {
+  color: #4e5a66;
+}
