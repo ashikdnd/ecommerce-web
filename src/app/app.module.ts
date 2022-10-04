@@ -10,6 +10,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatButtonModule} from "@angular/material/button";
 import {MatIconModule} from "@angular/material/icon";
 import {MatTooltipModule} from "@angular/material/tooltip";
+import { FooterComponent } from './footer/footer.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import {MatTooltipModule} from "@angular/material/tooltip";
     AppComponent,
     HeaderComponent,
     NavigationComponent,
-    PreferenceComponent
+    PreferenceComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
