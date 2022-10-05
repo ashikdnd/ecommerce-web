@@ -1,9 +1,10 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { BannerComponent } from './banner/banner.component';
-import { FeaturedProductsComponent } from './featured-products/featured-products.component';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {BannerComponent} from './banner/banner.component';
+import {FeaturedProductsComponent} from './featured-products/featured-products.component';
 import {Route, RouterModule} from "@angular/router";
-import { HomeComponent } from './home/home.component';
+import {HomeComponent} from './home/home.component';
+import {MatButtonModule} from "@angular/material/button";
 
 const routes: Route[] = [
   {
@@ -20,7 +21,9 @@ const routes: Route[] = [
   ],
   imports: [
     RouterModule.forChild(routes),
-    CommonModule
+    CommonModule,
+    MatButtonModule
   ]
 })
-export class HomeModule { }
+export class HomeModule {
+}

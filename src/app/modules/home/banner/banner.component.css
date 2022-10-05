@@ -1,0 +1,13 @@
+.big-font {
+  color: #38414B;
+  font-size: 36px;
+  text-shadow: 1px 1px 1px #fff;
+  line-height: 40px;
+  font-weight: 700;
+  padding-top: 50px;
+}
+
+.desc-text {
+  color: #7E8A97;
+  font-size: 16px;
+}

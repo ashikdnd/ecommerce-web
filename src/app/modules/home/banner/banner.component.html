@@ -1,1 +1,45 @@
-<p>banner works!</p>
+<div class="relative">
+  <!-- Carousel wrapper -->
+  <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
+    <div class="flex flex-row justify-between gap-5">
+      <img class="w-2/5"
+           src="{{bannerProds[bIndex].image}}">
+      <div class="flex flex-col items-start place-content-center w-2/5">
+        <span class="big-font font-extrabold">{{bannerProds[bIndex].title}}</span>
+        <p class="desc-text">
+          {{bannerProds[bIndex].description}}
+        </p>
+        <button [color]="'warn'" mat-raised-button>Add to Cart</button>
+      </div>
+      <div class="w-1/5">
+        <div class="flex p-1 w-28 h-28 bg-white rounded-full mt-4 border border-gray-600 border-dashed">
+          <div
+            class="flex p-1 flex-col items-center place-content-center w-28 h-28 rounded-full">
+            <span class="text-sm text-slate-400"
+                  style="text-decoration: line-through">{{bannerProds[bIndex].oldPrice}}</span>
+            <span class="text-2xl text-sky-700 font-bold">{{bannerProds[bIndex].sellPrice}}</span>
+            <span class="text-red-600">Best Deal</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Slider indicators -->
+  <div class="absolute z-30 flex space-x-3 -translate-x-1/2 bottom-5 left-1/2">
+    <button *ngFor="let prod of bannerProds; let i = index"
+            [class.bg-gray-700]="bIndex === i" class="w-3 h-3 rounded-full bg-white" type="button"></button>
+  </div>
+  <!-- Slider controls -->
+  <button (click)="changeProduct('-')"
+          class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+          data-carousel-prev=""
+          type="button">
+    <img src="/assets/images/shleft.png">
+  </button>
+  <button (click)="changeProduct('+')"
+          class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+          data-carousel-next=""
+          type="button">
+    <img src="/assets/images/shright.png">
+  </button>
+</div>
