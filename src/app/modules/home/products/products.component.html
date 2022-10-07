@@ -1,0 +1,106 @@
+<div class="flex flex-col gap-4">
+  <div class="flex mt-6 bg-white w-full">
+    <div class="flex flex-row justify-between items-center border border-dashed border-gray-400 w-full p-8">
+      <div class="big-text text-gray-600">Product Title</div>
+      <span class="text-2xl font-bold bg-amber-800 rounded-full w-20 h-20 flex items-center justify-center text-white">$133</span>
+    </div>
+  </div>
+
+  <div class="flex flex-col gap-3">
+    <span class="text-2xl font-bold text-slate-500">Nikon Camera</span>
+    <div class="flex flex-row gap-4">
+      <!-- Gallery -->
+      <div class="flex flex-col w-2/5 gap-3">
+        <img class="border-4 border-gray-300 rounded-md"
+             src="http://demo.minimalthemes.net/shopping-static/images/sample-1.jpg">
+        <div class="grid grid-cols-3 gap-4 px-2">
+          <img class="border-4 border-gray-300 rounded-md"
+               src="http://demo.minimalthemes.net/shopping-static/images/sample-4.jpg">
+          <img class="border-4 border-gray-300 rounded-md"
+               src="http://demo.minimalthemes.net/shopping-static/images/sample-5.jpg">
+          <img class="border-4 border-gray-300 rounded-md"
+               src="http://demo.minimalthemes.net/shopping-static/images/sample-1.jpg">
+        </div>
+      </div>
+      <!-- End Gallery -->
+
+      <!-- Spec starts -->
+      <div class="flex flex-col w-3/5 gap-2">
+        <div class="flex flex-row justify-between border-b border-dashed border-gray-400 pb-2 pr-10">
+          <span class="text-sm text-gray-600">Model</span>
+          <span class="text-sm text-gray-600">PT-2</span>
+        </div>
+        <div class="flex flex-row justify-between border-b border-dashed border-gray-400 pb-2 pr-10">
+          <span class="text-sm text-gray-600">Item#</span>
+          <span class="text-sm text-gray-600">2522</span>
+        </div>
+        <div class="flex flex-row justify-between border-b border-dashed border-gray-400 pb-2 pr-10">
+          <span class="text-sm text-gray-600">Manufacturer</span>
+          <span class="text-sm text-gray-600">Nikon</span>
+        </div>
+
+        <span class="text-2xl font-medium text-black mt-2">Available Options</span>
+
+        <div class="flex flex-row justify-between items-center">
+          <span>Memory</span>
+          <mat-form-field appearance="standard">
+            <mat-label>Choose Memory</mat-label>
+            <mat-select>
+              <mat-option>64GB</mat-option>
+              <mat-option>128GB</mat-option>
+              <mat-option>256GB</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+        <div class="flex flex-row justify-between items-center">
+          <span>Color</span>
+          <mat-form-field appearance="standard">
+            <mat-label>Choose Color</mat-label>
+            <mat-select>
+              <mat-option>Red</mat-option>
+              <mat-option>Blue</mat-option>
+              <mat-option>Green</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+        <div class="flex flex-row justify-between items-center">
+          <span>Quantity</span>
+          <mat-form-field appearance="standard">
+            <mat-label>Select Quantity</mat-label>
+            <mat-select>
+              <mat-option>1</mat-option>
+              <mat-option>2</mat-option>
+              <mat-option>3</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
+      <!-- Spec ends -->
+    </div>
+
+    <div class="flex">
+      <mat-tab-group animationDuration="0ms">
+        <mat-tab label="Description">
+          <div class="p-5">
+            Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth
+            master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro
+            keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat
+            salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.
+          </div>
+        </mat-tab>
+        <mat-tab label="Reviews(0)">
+          <div class="flex flex-col gap-4 p-5">
+            <span>John Doe (05/10/2022)</span>
+            <span>Raw denim you probably haven't heard of them jean shorts Austin.
+              Nesciunt tofu stumptown aliqua, retro synth master cleanse.
+            </span>
+          </div>
+        </mat-tab>
+      </mat-tab-group>
+    </div>
+  </div>
+
+  <app-featured-products></app-featured-products>
+</div>

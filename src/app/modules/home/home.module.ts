@@ -1,14 +1,22 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { BannerComponent } from './banner/banner.component';
-import { FeaturedProductsComponent } from './featured-products/featured-products.component';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {BannerComponent} from './banner/banner.component';
+import {FeaturedProductsComponent} from './featured-products/featured-products.component';
 import {Route, RouterModule} from "@angular/router";
-import { HomeComponent } from './home/home.component';
+import {HomeComponent} from './home/home.component';
+import {MatButtonModule} from "@angular/material/button";
+import {ProductsComponent} from './products/products.component';
+import {MatSelectModule} from "@angular/material/select";
+import {MatTabsModule} from "@angular/material/tabs";
 
 const routes: Route[] = [
   {
     path: '',
     component: HomeComponent
+  },
+  {
+    path: 'product-info',
+    component: ProductsComponent
   }
 ]
 
@@ -16,11 +24,16 @@ const routes: Route[] = [
   declarations: [
     BannerComponent,
     FeaturedProductsComponent,
-    HomeComponent
+    HomeComponent,
+    ProductsComponent
   ],
   imports: [
     RouterModule.forChild(routes),
-    CommonModule
+    CommonModule,
+    MatButtonModule,
+    MatSelectModule,
+    MatTabsModule
   ]
 })
-export class HomeModule { }
+export class HomeModule {
+}
