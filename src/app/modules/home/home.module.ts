@@ -5,11 +5,18 @@ import {FeaturedProductsComponent} from './featured-products/featured-products.c
 import {Route, RouterModule} from "@angular/router";
 import {HomeComponent} from './home/home.component';
 import {MatButtonModule} from "@angular/material/button";
+import {ProductsComponent} from './products/products.component';
+import {MatSelectModule} from "@angular/material/select";
+import {MatTabsModule} from "@angular/material/tabs";
 
 const routes: Route[] = [
   {
     path: '',
     component: HomeComponent
+  },
+  {
+    path: 'product-info',
+    component: ProductsComponent
   }
 ]
 
@@ -17,12 +24,15 @@ const routes: Route[] = [
   declarations: [
     BannerComponent,
     FeaturedProductsComponent,
-    HomeComponent
+    HomeComponent,
+    ProductsComponent
   ],
   imports: [
     RouterModule.forChild(routes),
     CommonModule,
-    MatButtonModule
+    MatButtonModule,
+    MatSelectModule,
+    MatTabsModule
   ]
 })
 export class HomeModule {

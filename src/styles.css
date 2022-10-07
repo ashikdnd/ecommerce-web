@@ -12,3 +12,16 @@ body {
   font-family: Roboto, "Helvetica Neue", sans-serif;
   background: url(assets/images/bodybg.png)
 }
+
+.big-text {
+  font-size: 42px;
+  font-weight: bold;
+}
+
+.mat-select-trigger {
+  min-width: 80vw;
+}
+
+.mat-select-panel {
+  max-height: 32px !important;
+}
