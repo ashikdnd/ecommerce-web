@@ -1,0 +1,104 @@
+<div class="flex flex-col gap-4">
+  <div class="flex mt-6 bg-white w-full">
+    <div class="flex flex-row justify-between items-center border border-dashed border-gray-400 w-full p-8">
+      <div class="big-text text-gray-600">My Cart</div>
+    </div>
+  </div>
+</div>
+
+<div class="flex flex-col gap-4 mt-4">
+  <span class="text-2xl font-bold text-gray-500">Items in Cart</span>
+
+  <div class="flex flex-row justify-between gap-2 px-2 py-2 bg-slate-50">
+    <mat-form-field appearance="standard" class="fuse-mat-dense fuse-mat-no-subscript fuse-mat-rounded min-w-64">
+      <input (keyup)="doFilter($event)" autocomplete="off"
+             matInput
+             placeholder="Live search"
+             type="text">
+    </mat-form-field>
+  </div>
+
+  <table [dataSource]="dataSource" class="mat-elevation-z8" mat-table matSort>
+    <ng-container matColumnDef="actions">
+      <th *matHeaderCellDef mat-header-cell> Action</th>
+      <td *matCellDef="let element; let i = index" mat-cell>
+        <span (click)="removeItemFromCart(element, i)" class="uppercase text-red-700 cursor-pointer">Remove</span>
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="name">
+      <th *matHeaderCellDef mat-header-cell mat-sort-header> Name</th>
+      <td *matCellDef="let element" mat-cell> {{element.name}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="image">
+      <th *matHeaderCellDef mat-header-cell> Image</th>
+      <td *matCellDef="let element" mat-cell>
+        <img class="w-32" src="{{element.image}}">
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="model">
+      <th *matHeaderCellDef mat-header-cell mat-sort-header> Model</th>
+      <td *matCellDef="let element" mat-cell> {{element.model}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="item_no">
+      <th *matHeaderCellDef mat-header-cell mat-sort-header> Item#</th>
+      <td *matCellDef="let element" mat-cell> {{element.item_no}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="qty">
+      <th *matHeaderCellDef mat-header-cell mat-sort-header> Quantity</th>
+      <td *matCellDef="let element" mat-cell> {{element.qty}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="price">
+      <th *matHeaderCellDef mat-header-cell mat-sort-header> Price</th>
+      <td *matCellDef="let element" mat-cell> {{element.price}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="total">
+      <th *matHeaderCellDef mat-header-cell mat-sort-header> Total</th>
+      <td *matCellDef="let element" mat-cell> {{element.total}} </td>
+    </ng-container>
+
+    <tr *matHeaderRowDef="displayedColumns" mat-header-row></tr>
+    <tr *matRowDef="let row; columns: displayedColumns;" mat-row></tr>
+  </table>
+
+  <mat-paginator [pageSizeOptions]="[5, 10, 20]"
+                 [showFirstLastButtons]="true">
+  </mat-paginator>
+
+  <div class="flex flex-col gap-3">
+    <div class="flex flex-row justify-end gap-8">
+      <span>Sub total</span>
+      <span>$26.00</span>
+    </div>
+
+    <div class="flex flex-row justify-end gap-8">
+      <span>VAT 17%</span>
+      <span>$26.00</span>
+    </div>
+
+    <div class="flex flex-row justify-end gap-8">
+      <span>Sub total</span>
+      <span>$10.00</span>
+    </div>
+
+    <div class="flex flex-row justify-end gap-8">
+      <span>Total</span>
+      <span>$255.00</span>
+    </div>
+
+    <div class="flex flex-row gap-2 justify-end">
+      <button class="place-self-end w-40 bg-amber-400 text-black font-bold py-2 px-2 rounded-lg" routerLink="/">
+        Continue Shopping
+      </button>
+      <button class="place-self-end w-32 bg-red-600 text-white font-bold py-2 px-2 rounded-lg" routerLink="/checkout">
+        Checkout
+      </button>
+    </div>
+  </div>
+</div>

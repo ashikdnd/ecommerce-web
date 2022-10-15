@@ -66,15 +66,20 @@
         </div>
 
         <div class="flex flex-row justify-between items-center">
-          <span>Quantity</span>
-          <mat-form-field appearance="standard">
-            <mat-label>Select Quantity</mat-label>
-            <mat-select>
-              <mat-option>1</mat-option>
-              <mat-option>2</mat-option>
-              <mat-option>3</mat-option>
-            </mat-select>
-          </mat-form-field>
+          <div class="flex flex-row w-3/4 items-center place-items-center">
+            <span class="pt-2.5 mr-3">Qty.</span>
+            <mat-form-field appearance="standard" class="w-48">
+              <mat-label>Select Quantity</mat-label>
+              <mat-select>
+                <mat-option>1</mat-option>
+                <mat-option>2</mat-option>
+                <mat-option>3</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+
+          <button class="w-1/4 bg-red-600 text-white font-bold py-3 px-4 rounded-lg" routerLink="/cart">Add to Cart
+          </button>
         </div>
       </div>
       <!-- Spec ends -->
