@@ -1,0 +1,161 @@
+<div class="flex flex-col gap-4">
+  <div class="flex mt-6 bg-white w-full">
+    <div class="flex flex-row justify-between items-center border border-dashed border-gray-400 w-full p-8">
+      <div class="big-text text-gray-600">Checkout</div>
+      <button class="place-self-end w-32 bg-red-600 text-white font-bold py-2 px-2 rounded-lg">
+        LOGIN
+      </button>
+    </div>
+  </div>
+</div>
+
+<div class="flex flex-row w-full mt-4 gap-4">
+  <div class="grid gap-4 grid-cols-2 w-1/2">
+    <span class="text-2xl col-span-2">Billing Address</span>
+    <mat-form-field appearance="fill">
+      <label>First name</label>
+      <input matInput type="text">
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <label>Last name</label>
+      <input matInput type="text">
+    </mat-form-field>
+    <mat-form-field appearance="fill" class="col-span-2">
+      <label>Company Name</label>
+      <input matInput type="text">
+    </mat-form-field>
+    <mat-form-field appearance="fill" class="col-span-2">
+      <label>Address</label>
+      <input matInput type="text">
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <label>City</label>
+      <input matInput type="text">
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <label>Pincode</label>
+      <input matInput type="text">
+    </mat-form-field>
+  </div>
+  <div class="grid gap-4 grid-cols-2 w-1/2">
+    <span class="text-2xl col-span-2">Shipping Address</span>
+    <mat-form-field appearance="fill">
+      <label>First name</label>
+      <input matInput type="text">
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <label>Last name</label>
+      <input matInput type="text">
+    </mat-form-field>
+    <mat-form-field appearance="fill" class="col-span-2">
+      <label>Company Name</label>
+      <input matInput type="text">
+    </mat-form-field>
+    <mat-form-field appearance="fill" class="col-span-2">
+      <label>Address</label>
+      <input matInput type="text">
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <label>City</label>
+      <input matInput type="text">
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <label>Pincode</label>
+      <input matInput type="text">
+    </mat-form-field>
+  </div>
+</div>
+
+<div class="flex flex-col gap-4">
+  <span class="text-2xl font-bold">
+    Payment Method
+  </span>
+
+  <mat-radio-group aria-label="Select an option">
+    <mat-radio-button value="cc">Credit Card</mat-radio-button>
+    <mat-radio-button value="cod">Cash on Delivery</mat-radio-button>
+    <mat-radio-button value="upi">BHIM UPI</mat-radio-button>
+  </mat-radio-group>
+</div>
+
+
+<div class="overflow-x-auto relative shadow-md sm:rounded-lg mt-6">
+  <div class="flex flex-auto text-2xl font-bold mb-2">Items in Cart</div>
+  <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+    <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+    <tr>
+      <th class="py-3 px-6" scope="col">
+        Product name
+      </th>
+      <th class="py-3 px-6" scope="col">
+        Model
+      </th>
+      <th class="py-3 px-6" scope="col">
+        Item
+      </th>
+      <th class="py-3 px-6" scope="col">
+        Qty
+      </th>
+      <th class="py-3 px-6" scope="col">
+        Price
+      </th>
+      <th class="py-3 px-6" scope="col">
+        Total
+      </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let item of itemsInCart"
+        class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+      <th class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white" scope="row">
+        {{item.name}}
+      </th>
+      <td class="py-4 px-6">
+        {{item.model}}
+      </td>
+      <td class="py-4 px-6">
+        {{item.item_no}}
+      </td>
+      <td class="py-4 px-6">
+        {{item.qty}}
+      </td>
+      <td class="py-4 px-6">
+        ${{item.price}}
+      </td>
+      <td class="py-4 px-6">
+        ${{item.total}}
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="flex flex-col gap-3 mt-6">
+  <div class="flex flex-row justify-end gap-8">
+    <span>Sub total</span>
+    <span>$26.00</span>
+  </div>
+
+  <div class="flex flex-row justify-end gap-8">
+    <span>VAT 17%</span>
+    <span>$26.00</span>
+  </div>
+
+  <div class="flex flex-row justify-end gap-8">
+    <span>Sub total</span>
+    <span>$10.00</span>
+  </div>
+
+  <div class="flex flex-row justify-end gap-8">
+    <span>Total</span>
+    <span>$255.00</span>
+  </div>
+
+  <div class="flex flex-row gap-2 justify-end">
+    <button class="place-self-end w-40 bg-amber-400 text-black font-bold py-2 px-2 rounded-lg"
+            routerLink="/checkout/payment">
+      Pay Now
+    </button>
+  </div>
+</div>
+
