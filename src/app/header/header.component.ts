@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {AuthService} from "../services/auth.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-header',
@@ -7,9 +9,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  isAuthenticated: boolean = false;
+
+  constructor(private auth: AuthService, private router: Router) {
+  }
 
   ngOnInit(): void {
+    if (localStorage.getItem('accessToken')) {
+      this.isAuthenticated = true;
+    }
+    this.auth.authStatus.subscribe((res: boolean) => {
+      this.isAuthenticated = res;
+    })
+  }
+
+  logout() {
+    this.auth.logout().subscribe((res: any) => {
+      this.auth.performLogout();
+    })
   }
 
 }
