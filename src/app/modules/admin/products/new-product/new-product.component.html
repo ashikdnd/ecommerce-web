@@ -1,0 +1,49 @@
+<div class="flex flex-col mt-4 w-full">
+  <h2>Add new product</h2>
+
+  <form (ngSubmit)="saveProduct()" [formGroup]="prodForm" class="grid grid-cols-4 gap-4">
+    <mat-form-field appearance="fill">
+      <mat-label>Product Name</mat-label>
+      <input formControlName="title" matInput>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Price</mat-label>
+      <input formControlName="price" matInput>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="col-span-2">
+      <mat-label>Description</mat-label>
+      <textarea formControlName="desc" matInput></textarea>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>SKU#</mat-label>
+      <input formControlName="sku" matInput>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Features</mat-label>
+      <mat-select formControlName="features" multiple>
+        <mat-option value="1">Memory</mat-option>
+        <mat-option value="2">Color</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Maker</mat-label>
+      <input formControlName="maker" matInput>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Model</mat-label>
+      <input formControlName="model" matInput>
+    </mat-form-field>
+
+    <div class="col-span-4">
+      <button [disabled]="prodForm.status === 'INVALID'" color="primary" mat-flat-button type="submit">Save Product
+      </button>
+    </div>
+  </form>
+
+</div>
